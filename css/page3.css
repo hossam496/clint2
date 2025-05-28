@@ -1,0 +1,190 @@
+/* الأساسيات */
+body {
+    font-family: 'Traditional Arabic', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* العنوان الرئيسي */
+.title {
+    text-align: center;
+    margin: clamp(20px, 5vw, 40px) auto;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: #2c3e50;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    padding: 15px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    margin: 10px auto;
+}
+
+/* الحاوية الرئيسية */
+.continer {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* محتوى الأذكار */
+.content {
+    background-color: white;
+    border-radius: 15px;
+    padding: clamp(20px, 3vw, 30px);
+    margin: 20px auto;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid #3498db;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #eee;
+}
+
+.content p {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 500;
+    margin: 20px 0;
+    text-align: justify;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+/* التنسيقات الخاصة */
+span[style*="color: blue"] {
+    display: block;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #2980b9 !important;
+    margin: 10px 0 25px 0;
+    font-style: italic;
+    padding-right: 20px;
+}
+
+span[style*="color: red"] {
+    color: #e74c3c !important;
+    font-weight: bold;
+}
+
+span[style*="display: block"] {
+    display: block;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #16a085;
+}
+
+.span{
+    display: block;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #2980b9 !important;
+    margin: 10px 0 25px 0;
+    font-style: italic;
+    padding-right: 20px;
+}
+
+/* تأثيرات التفاعل */
+.content p:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+/* التكيف مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .continer {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .content p {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+    
+    .content h2 {
+        font-size: clamp(1.5rem, 5vw, 1.8rem);
+    }
+    
+    span[style*="color: blue"] {
+        margin: 8px 0 20px 0;
+    }
+}
+
+/* زخارف إسلامية عائمة */
+.islamic-pattern {
+    position: fixed;
+    font-family: 'Amiri', 'Traditional Arabic', Arial;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    animation: float 15s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* زخارف خلفية */
+.bg-islamic-pattern {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.1;
+}
+
+/* تأثيرات إسلامية للعناصر */
+.content::after, .content2::after, .content3::after {
+    content: '۞';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #8b451355;
+    font-size: 24px;
+}
+
+/* حدود زخرفية */
+.title {
+    background: linear-gradient(to right, transparent, #f0e6d2, transparent);
+    border-right: 5px solid #8b4513;
+    border-left: 5px solid #8b4513;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238b4513" d="M0 50 Q25 20 50 50 T100 50" opacity="0.3"/></svg>');
+    background-repeat: repeat-y;
+}
