@@ -1,0 +1,229 @@
+/* أساسيات الصفحة */
+body {
+    font-family: 'Traditional Arabic', Arial, sans-serif;
+    background-color: #f5f5f5;
+    direction: rtl;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* العناوين الرئيسية */
+.title {
+    text-align: center;
+    margin-top: clamp(20px, 5vw, 50px);
+    font-size: clamp(28px, 6vw, 42px);
+    color: #5d2906;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    padding: clamp(10px, 3vw, 15px);
+}
+
+/* الحاوية الرئيسية */
+.contienr {
+    width: 90%;
+    max-width: 900px;
+    margin: clamp(15px, 3vw, 30px) auto;
+    padding: clamp(5px, 2vw, 15px);
+    box-sizing: border-box;
+}
+
+/* المحتوى العام */
+.content, .content3 {
+    outline: 2px solid #8b4513;
+    font-size: clamp(24px, 5vw, 60px);
+    font-weight: 800;
+    background-color: white;
+    border-radius: 10px;
+    padding: clamp(15px, 3vw, 25px);
+    margin-bottom: clamp(20px, 4vw, 30px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* القوائم */
+.content ul, .content3 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content li, .content3 li {
+    margin-bottom: clamp(10px, 2vw, 15px);
+    line-height: 1.6;
+    text-align: right;
+    padding-right: clamp(10px, 2vw, 15px);
+    position: relative;
+}
+
+.content li:before, .content3 li:before {
+    content: "•";
+    color: #8b4513;
+    font-weight: bold;
+    position: absolute;
+    right: clamp(-8px, -1vw, -10px);
+    top: 0;
+}
+
+/* المحتوى الثانوي */
+.content2 {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: clamp(15px, 3vw, 20px);
+    margin: clamp(20px, 4vw, 30px) 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.content2 span {
+    font-size: clamp(28px, 6vw, 60px);
+    display: block;
+    margin-bottom: clamp(10px, 2vw, 15px);
+    color: #5d2906;
+    font-weight: 800;
+}
+
+.content2 p {
+    font-size: clamp(24px, 5vw, 60px);
+    font-weight: 800;
+    line-height: 1.8;
+    margin: clamp(10px, 2vw, 15px) 0;
+}
+
+/* العناوين الفرعية */
+.title3, .title4 {
+    text-align: center;
+    font-size: clamp(28px, 5vw, 40px);
+    color: #5d2906;
+    margin: clamp(15px, 3vw, 25px) 0;
+    padding-bottom: clamp(5px, 1.5vw, 10px);
+    border-bottom: 2px solid #e0d6cc;
+}
+
+/* العناصر الخاصة */
+.cont {
+    text-align: center;
+    border-bottom: 2px dotted #8b4513;
+    padding-bottom: clamp(15px, 3vw, 20px);
+    margin: clamp(20px, 4vw, 30px) 0;
+}
+
+.dd{
+    margin: auto;
+    color: red;
+    font-size: 60px;
+}
+
+span[style*="color: red"] {
+    color: #b22222 !important;
+    font-weight: bold;
+    font-size: clamp(20px, 4vw, 36px);
+}
+
+span[style*="display: block"] {
+    display: block;
+    margin: clamp(15px, 3vw, 20px) 0;
+    font-weight: bold;
+    font-size: clamp(20px, 4vw, 32px);
+}
+
+p[style*="color: red"] {
+    color: #b22222;
+    font-weight: 800;
+    text-align: center;
+    font-size: clamp(24px, 5vw, 60px);
+    margin: clamp(15px, 3vw, 25px) 0;
+}
+
+p[style*="text-align: center"] {
+    font-size: clamp(24px, 5vw, 60px);
+    color: #5d2906;
+    font-weight: 800;
+    margin: clamp(15px, 3vw, 20px) 0;
+}
+
+/* وسائط استجابة إضافية */
+@media (max-width: 768px) {
+    .content, .content3 {
+        font-size: clamp(20px, 4.5vw, 36px);
+    }
+    
+    .content2 p, .content2 span {
+        font-size: clamp(22px, 5vw, 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+    
+    .contienr {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .content, .content3 {
+        padding: 12px;
+        font-size: clamp(18px, 4vw, 24px);
+    }
+    
+    .content2 p, .content2 span {
+        font-size: clamp(20px, 4.5vw, 28px);
+    }
+    
+    .title3, .title4 {
+        font-size: clamp(22px, 4.5vw, 28px);
+    }
+}
+
+/* زخارف إسلامية عائمة */
+.islamic-pattern {
+    position: fixed;
+    font-family: 'Amiri', 'Traditional Arabic', Arial;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    animation: float 15s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* زخارف خلفية */
+.bg-islamic-pattern {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.1;
+}
+
+/* تأثيرات إسلامية للعناصر */
+.content::after, .content2::after, .content3::after {
+    content: '۞';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #8b451355;
+    font-size: 24px;
+}
+
+/* حدود زخرفية */
+.title {
+    background: linear-gradient(to right, transparent, #f0e6d2, transparent);
+    border-right: 5px solid #8b4513;
+    border-left: 5px solid #8b4513;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238b4513" d="M0 50 Q25 20 50 50 T100 50" opacity="0.3"/></svg>');
+    background-repeat: repeat-y;
+}

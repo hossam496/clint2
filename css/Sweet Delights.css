@@ -1,0 +1,150 @@
+/* أساسيات الصفحة */
+.continer {
+    text-align: center;
+    direction: rtl;
+    padding: 2vw;
+
+    font-family: 'Traditional Arabic', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* العناوين الرئيسية */
+.title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* حجم متغير بين 32px و56px */
+    color: #8b4513;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.3;
+}
+
+/* المحتوى الرئيسي */
+.content {
+    outline: 3px black double;
+    width: 90%;
+    max-width: 850px;
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* حجم متغير بين 24px و40px */
+    font-weight: 700;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    box-sizing: border-box;
+}
+
+/* العناصر الداخلية */
+.content span {
+    display: block;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.content p {
+    margin: 1.5rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto; /* فواصل تلقائية للكلمات */
+}
+
+/* النصوص الحمراء */
+span[style*="color: red"] {
+    font-weight: bold;
+    margin: 0.8rem 0;
+    display: inline-block;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+}
+
+/* العناوين الفرعية */
+span[style*="display: block"] {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: #5d2906;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* وسائط استجابة إضافية */
+@media (max-width: 768px) {
+    .content {
+        padding: 1.5rem;
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+    
+    .title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .continer {
+        padding: 1rem;
+    }
+    
+    .content {
+        width: 95%;
+        padding: 1rem;
+        font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+        line-height: 1.6;
+    }
+    
+    span[style*="display: block"] {
+        font-size: clamp(1.3rem, 4vw, 1.7rem);
+    }
+}
+
+/* زخارف إسلامية عائمة */
+.islamic-pattern {
+    position: fixed;
+    font-family: 'Amiri', 'Traditional Arabic', Arial;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    animation: float 15s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* زخارف خلفية */
+.bg-islamic-pattern {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.1;
+}
+
+/* تأثيرات إسلامية للعناصر */
+.content::after, .content2::after, .content3::after {
+    content: '۞';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #8b451355;
+    font-size: 24px;
+}
+
+/* حدود زخرفية */
+.title {
+    background: linear-gradient(to right, transparent, #f0e6d2, transparent);
+    border-right: 5px solid #8b4513;
+    border-left: 5px solid #8b4513;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238b4513" d="M0 50 Q25 20 50 50 T100 50" opacity="0.3"/></svg>');
+    background-repeat: repeat-y;
+}
+
+img{
+    width: 100%;
+    height: 800px;
+}
